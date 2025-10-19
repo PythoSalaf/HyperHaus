@@ -537,17 +537,16 @@
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
-  hyperEvmTestnet,
   publicClient,
   walletClient,
 } from "../../utils/viemClient";
 import { contractABI, contractAddress } from "../../components/contractConfig";
 import { createWalletClient, custom } from "viem";
-// import { sepolia } from "viem/chains";
+import { baseSepolia } from "viem/chains";
 import { entryThresholdeth } from "../../utils/formatters";
 
 const Wallet_Client_2 = createWalletClient({
-  chain: hyperEvmTestnet,
+  chain: baseSepolia,
   transport: custom(window.ethereum),
 });
 
@@ -581,46 +580,6 @@ export const fetchGuildIds = createAsyncThunk(
   }
 );
 
-// export const fetchGuildData = createAsyncThunk(
-//   "contract/fetchGuildData",
-//   async (guildIds, { rejectWithValue }) => {
-//     try {
-//       if (!guildIds || guildIds.length === 0) {
-//         console.log("No guild IDs provided, returning empty guilds");
-//         return [];
-//       }
-//       console.log("Fetching guild data for IDs:", guildIds);
-//       const guilds = [];
-//       for (const guildId of guildIds) {
-//         console.log("Fetching data for guild ID:", guildId);
-//         const guildData = await publicClient.readContract({
-//           address: contractAddress,
-//           abi: contractABI,
-//           functionName: "GuildData",
-//           args: [guildId],
-//         });
-//         console.log("Guild data fetched:", {
-//           guildId,
-//           guild: guildData[0],
-//           proposals: guildData[1],
-//         });
-//         guilds.push({
-//           guildId,
-//           guild: guildData[0],
-//           proposals: guildData[1],
-//           messages: [], // Initialize empty messages array
-//         });
-//       }
-//       console.log("All guild data fetched:", guilds);
-//       return guilds;
-//     } catch (error) {
-//       console.error("Failed to fetch guild data:", error);
-//       return rejectWithValue(
-//         error.message || "Unknown error fetching guild data"
-//       );
-//     }
-//   }
-// );
 
 export const fetchGuildData = createAsyncThunk(
   "contract/fetchGuildData",
@@ -657,8 +616,7 @@ export const fetchGuildData = createAsyncThunk(
 
         const serializedProposals = guildData[1].map((proposal) => ({
           ...proposal,
-          amount: proposal.amount ? proposal.amount.toString() : undefined, // Serialize BigInt
-          // Add other fields that may be BigInt
+          amount: proposal.amount ? proposal.amount.toString() : undefined, 
         }));
 
         console.log("Guild data fetched:", {
