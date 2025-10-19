@@ -666,6 +666,8 @@ export const createGuild = createAsyncThunk(
         throw new Error("No wallet connected");
       }
 
+      
+
       console.log("Creating guild with params:", {
         creatorName,
         guildName,
@@ -674,7 +676,7 @@ export const createGuild = createAsyncThunk(
         entryThreshold,
         riskThreshold,
       });
-      // const walletClientInstance = walletClient(wallet);
+      
       const hash = await Wallet_Client_2.writeContract({
         address: contractAddress,
         abi: contractABI,
@@ -691,7 +693,7 @@ export const createGuild = createAsyncThunk(
         value: entryThreshold,
       });
 
-      // const hash = await Wallet_Client_2.writeContract(request);
+      
       console.log("Transaction hash:", hash);
       const receipt = await publicClient.waitForTransactionReceipt({ hash });
       console.log("Transaction receipt:", receipt);

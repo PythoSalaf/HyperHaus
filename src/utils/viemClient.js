@@ -22,10 +22,13 @@ export const walletClient = async (wallet) => {
     console.log("Privy provider available:", provider);
   
     try {
+        const active_Chain = provider.request({method: 'eth_chainId'})
+      if(active_Chain != (`0x${(84532).toString(16)}`)){
       await provider.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: `0x${(84532).toString(16)}` }], 
       });
+    }
     } catch (switchError) {
     
       if (switchError.code === 4902) {
