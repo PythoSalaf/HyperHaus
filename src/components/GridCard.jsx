@@ -21,7 +21,7 @@ const GridCard = ({ id, name, description, entryPoint, members }) => {
                 Access Amount
               </h2>
               <h2 className="font-bold text-lg md:text-xl text-green-800 mt-1">
-                {entryPoint} HYPE
+                {entryPoint} ETH
               </h2>
             </div>
           </div>
@@ -37,7 +37,7 @@ const GridCard = ({ id, name, description, entryPoint, members }) => {
         <div className="w-full py-1 ">
           <button
             className="bg-[#6d8cff] cursor-pointer w-full py-1 text-sm md:text-base font-semibold rounded-lg text-[#081423]"
-            onClick={() => navigate(`/dashboard/guilds/${id}`)}
+            onClick={() => navigate(`/guilds/${id}`)}
           >
             View Guild
           </button>

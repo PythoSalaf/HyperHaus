@@ -28,7 +28,7 @@ const Hero = () => {
             </button>
             <button
               className="bg-[#5b8eff] text-white active:bg-blue-800 active:scale-95 transition-transform duration-300 rounded-lg cursor-pointer py-1.5 px-4"
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/guilds")}
             >
               Join a guild
             </button>

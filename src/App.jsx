@@ -16,14 +16,14 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingLayout />} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="/dashboard/guilds" element={<Guild />} />
+          <Route path="/guilds" element={<DashboardLayout />}>
+            <Route index element={<Guild />} />
+            {/* <Route index element={<Dashboard />} /> */}
             <Route
-              path="/dashboard/guilds/:guildId"
+              path="/guilds/:guildId"
               element={<GuildDetails />}
             />
-            <Route path="/dashboard/leaderboards" element={<Leaderboards />} />
+            <Route path="/guilds/leaderboards" element={<Leaderboards />} />
           </Route>
         </Route>
       </Routes>

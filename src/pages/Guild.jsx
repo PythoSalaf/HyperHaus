@@ -160,7 +160,7 @@ const Guild = () => {
                 Find your trading squad
               </h2>
               <p className="pt-1.5 text-xs md:text-sm lg:text-base">
-                Join top-performing guilds or create your own and earn HYPE
+                Join top-performing guilds or create your own and earn ETH
                 together
               </p>
             </div>
@@ -254,7 +254,7 @@ const Guild = () => {
                             {data?.guild?.entryThreshold
                               ? entryThresholdeth(data.guild.entryThreshold)
                               : "0"}{" "}
-                            HYPE
+                            ETH
                           </div>
                         </td>
                         <td className="py-2 text-sm md:text-base">

@@ -9,9 +9,9 @@ const Sidebar = () => {
         HyperHaus
       </Link>
       <div className="mt-10 flex items-start gap-y-4 flex-col">
-        <NavLink to="/dashboard">Dashboard</NavLink>
-        <NavLink to="/dashboard/guilds">Guilds</NavLink>
-        <NavLink to="/dashboard/leaderboards">Leaderboards</NavLink>
+        {/* <NavLink to="/dashboard">Dashboard</NavLink> */}
+        <NavLink to="/guilds">Guilds</NavLink>
+        <NavLink to="/guilds/leaderboards">Leaderboards</NavLink>
         <NavLink>My Guild</NavLink>
         <NavLink>Rewards</NavLink>
         <NavLink>Treasury</NavLink>
