@@ -50,7 +50,9 @@ const TopUpStakeModal = ({ isOpen, onClose, onTopUp, guildId }) => {
           <div className="text-red-500 text-sm mb-4">{formError}</div>
         )}
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">Amount (HYPE)</label>
+          <label className="block text-sm font-medium mb-1">
+            Amount (HYPE)
+          </label>
           <input
             type="number"
             value={amount}
@@ -533,7 +535,7 @@ const GuildDetails = () => {
             <div className="flex items-center justify-between py-3">
               <h4 className="text-sm">Pool:</h4>
               <div className="bg-[#1e2a46] rounded-lg py-1 px-4 text-sm md:text-base font-semibold">
-                {guild.pool ? entryThresholdeth(guild.pool) : "0"} HYPE
+                {guild.pool ? entryThresholdeth(guild.pool) : "0"} ETH
               </div>
             </div>
             <div className="flex items-center justify-between py-3">
@@ -607,7 +609,7 @@ const GuildDetails = () => {
                       {guild.memberStakes[index]
                         ? entryThresholdeth(guild.memberStakes[index])
                         : "0"}{" "}
-                      HYPE
+                      ETH
                     </td>
                     <td className="py-2 text-sm md:text-base">
                       {guild.memberCap ? guild.memberCap.toString() : "0"}
