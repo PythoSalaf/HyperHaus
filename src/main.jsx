@@ -10,7 +10,7 @@ import { store } from "./Store/store.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <PrivyProvider appId="cmegit35h00ihju0bqpgz6hk6">
+      <PrivyProvider appId="cmh0cx9up02kolb0cppd1g5bt">
         <BrowserRouter>
           <App />
         </BrowserRouter>
